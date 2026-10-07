@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 30px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -23,6 +24,7 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.6s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Header compacto e elegante */
@@ -58,6 +60,17 @@ body {
     margin: 4px 0;
     color: #f2f2f2;
     font-size: 0.95em;
+}
+
+/* Efeito no e-mail para copiar ao clicar */
+.email-clickable {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.email-clickable:hover {
+    opacity: 0.85;
+    text-decoration: underline;
 }
 
 /* Ícones de Contato */
@@ -99,18 +112,21 @@ h2 {
     margin: 24px 0 12px 0;
     font-size: 1.35em;
     font-weight: 700;
+    transition: color 0.3s ease, border-left-color 0.3s ease;
 }
 
 h3 {
     margin-top: 14px;
     color: #333;
     font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
 p, li {
     font-size: 0.95em;
     line-height: 1.6;
     color: #333;
+    transition: color 0.3s ease;
 }
 
 ul {
@@ -147,19 +163,4 @@ ul li::before {
     border: none;
     padding: 12px 28px;
     border-radius: 8px;
-    font-size: 0.95em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-#btn-print:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-/* Animação */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    font-size: 0
