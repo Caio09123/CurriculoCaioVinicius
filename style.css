@@ -60,7 +60,7 @@ body {
     font-size: 0.95em;
 }
 
-/* Ícone de Telefone e E-mail */
+/* Ícones de Contato */
 .header i.fa-phone, .header i.fa-envelope {
     margin-right: 3px;
     font-size: 0.9em;
@@ -70,31 +70,21 @@ body {
     margin-top: 14px;
 }
 
-/* Forçar o círculo branco perfeito nos Ícones Sociais */
-.social-links a {
-    text-decoration: none !important;
-    display: inline-block;
-}
-
-.social-icon-fa {
-    font-size: 20px !important;
-    color: #005f73 !important;
-    background: #ffffff !important;
+/* Padrão antigo das logos PNG em círculos brancos */
+.social-icon {
     width: 42px !important;
     height: 42px !important;
-    border-radius: 50% !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 6px !important;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease !important;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+    margin: 0 6px;
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.social-icon-fa:hover {
-    transform: translateY(-3px) !important;
-    background: #e0f2f1 !important;
-    color: #0a9396 !important;
+.social-icon:hover {
+    transform: translateY(-3px);
 }
 
 /* Conteúdo Principal */
