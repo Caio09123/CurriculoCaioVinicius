@@ -25,6 +25,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.6s ease;
     transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 /* Header compacto e elegante */
@@ -33,6 +34,7 @@ body {
     color: white;
     text-align: center;
     padding: 30px 20px;
+    position: relative;
 }
 
 .header img {
@@ -100,30 +102,55 @@ body {
     transform: translateY(-3px);
 }
 
-/* Botão Flutuante do Modo Escuro (Compacto e travado) */
+/* Botão do Modo Escuro no canto SUPERIOR ESQUERDO */
 .theme-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 42px !important;
-    height: 42px !important;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: 50% !important;
-    background: #005f73;
-    color: #ffffff;
-    border: none;
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    font-size: 1.1em;
+    font-size: 1.05em;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 9999;
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .theme-toggle-btn:hover {
-    transform: scale(1.1);
-    background: #0a9396;
+    background: #ffffff !important;
+    color: #005f73 !important;
+    transform: scale(1.08);
+}
+
+/* Notificação Toast Elegante */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #005f73;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95em;
+    font-weight: 500;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 10000;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Conteúdo Principal */
@@ -174,7 +201,7 @@ ul li::before {
     width: 14px;
 }
 
-/* Botão de Impressão */
+/* Botão de Impressão (Garantindo o texto visível) */
 .button {
     text-align: center;
     margin: 25px 0 10px 0;
@@ -191,7 +218,11 @@ ul li::before {
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 180px !important;
+    min-height: 44px !important;
 }
 
 #btn-print:hover {
@@ -224,6 +255,11 @@ body.dark-mode main li {
 body.dark-mode .theme-toggle-btn {
     background: #ffffff !important;
     color: #121212 !important;
+}
+
+body.dark-mode .toast {
+    background: #00acc1;
+    color: #121212;
 }
 
 /* Animação */
@@ -263,11 +299,11 @@ body.dark-mode .theme-toggle-btn {
     }
 
     .theme-toggle-btn {
-        top: 15px;
-        right: 15px;
-        width: 36px !important;
-        height: 36px !important;
-        font-size: 0.95em;
+        top: 12px;
+        left: 12px;
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 0.9em;
     }
 }
 
@@ -322,7 +358,7 @@ body.dark-mode .theme-toggle-btn {
         line-height: 1.4;
     }
 
-    .button, #btn-print, .theme-toggle-btn {
+    .button, #btn-print, .theme-toggle-btn, .toast {
         display: none !important;
     }
 }
