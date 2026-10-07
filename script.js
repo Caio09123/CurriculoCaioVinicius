@@ -8,17 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. Copiar E-mail para a área de transferência ao clicar
+    // 2. Copiar E-mail e Exibir Toast Personalizado (sem o alerta do navegador)
     const emailContact = document.getElementById("email-contact");
+    const toast = document.getElementById("toast");
+
     if (emailContact) {
         emailContact.addEventListener("click", () => {
             const email = "caiovinicius.ramalho.agra@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
-                alert("E-mail copiado para a área de transferência!");
+                showToast("E-mail copiado para a área de transferência!");
             }).catch(() => {
-                alert("E-mail: " + email);
+                showToast("E-mail: " + email);
             });
         });
+    }
+
+    function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2500);
     }
 
     // 3. Alternador de Modo Escuro (Dark Mode)
