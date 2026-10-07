@@ -70,26 +70,31 @@ body {
     margin-top: 14px;
 }
 
-/* Estilização unificada dos Ícones Sociais (GitHub, LinkedIn, Instagram) */
+/* Forçar o círculo branco perfeito nos Ícones Sociais */
+.social-links a {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
 .social-icon-fa {
-    font-size: 22px;
-    color: #005f73;
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    font-size: 20px !important;
+    color: #005f73 !important;
+    background: #ffffff !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 6px !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
 }
 
 .social-icon-fa:hover {
-    transform: translateY(-3px);
-    background: #e0f2f1;
-    color: #0a9396;
+    transform: translateY(-3px) !important;
+    background: #e0f2f1 !important;
+    color: #0a9396 !important;
 }
 
 /* Conteúdo Principal */
