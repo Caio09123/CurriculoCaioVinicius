@@ -25,7 +25,7 @@ body {
     animation: fadeIn 0.6s ease;
 }
 
-/* Header mais compacto e elegante */
+/* Header compacto e elegante */
 .header {
     background: linear-gradient(135deg, #005f73, #0a9396);
     color: white;
@@ -55,29 +55,41 @@ body {
 }
 
 .header p {
-    margin: 3px 0;
+    margin: 4px 0;
     color: #f2f2f2;
     font-size: 0.95em;
 }
 
+/* Ícone de Telefone e E-mail */
+.header i.fa-phone, .header i.fa-envelope {
+    margin-right: 3px;
+    font-size: 0.9em;
+}
+
 .social-links {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
-.social-icon {
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 50%;
+/* Estilização unificada dos Ícones Sociais (GitHub, LinkedIn, Instagram) */
+.social-icon-fa {
+    font-size: 22px;
+    color: #005f73;
     background: white;
-    padding: 2px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 5px;
-    object-fit: contain;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-.social-icon:hover {
+.social-icon-fa:hover {
     transform: translateY(-3px);
+    background: #e0f2f1;
+    color: #0a9396;
 }
 
 /* Conteúdo Principal */
@@ -189,10 +201,10 @@ ul li::before {
     }
 }
 
-/* REGRA DE IMPRESSÃO / SALVAR EM PDF (MÁGICA PARA REDUZIR AS PÁGINAS) */
+/* REGRA DE IMPRESSÃO / SALVAR EM PDF */
 @media print {
     @page {
-        margin: 10mm; /* Reduz a margem da folha A4 */
+        margin: 10mm;
     }
 
     body {
@@ -210,7 +222,7 @@ ul li::before {
 
     .header {
         padding: 15px 10px;
-        background: #005f73 !important; /* Cor sólida para economizar tinta/ficar limpo */
+        background: #005f73 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -240,7 +252,6 @@ ul li::before {
         line-height: 1.4;
     }
 
-    /* Esconde o botão de imprimir na folha PDF */
     .button, #btn-print {
         display: none !important;
     }
